@@ -3,10 +3,12 @@ package de.christianbergau.serialization_annotations;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@JsonRootName(value = "MyRootName")
 @JsonPropertyOrder({"id", "name"})
 public class ExtendableBean {
     private String name;
