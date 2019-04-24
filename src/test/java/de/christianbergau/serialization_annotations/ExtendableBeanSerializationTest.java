@@ -10,13 +10,12 @@ class ExtendableBeanSerializationTest {
 
     @Test
     void whenSerializingUsingJsonAnyGetter_thenCorrect() throws JsonProcessingException {
-        ExtendableBean bean = new ExtendableBean();
-        bean.name("My Bean");
+        ExtendableBean bean = new ExtendableBean("My Bean", 1);
         bean.prop("KeyA", "ValueA");
         bean.prop("KeyB", "ValueB");
 
         String result = new ObjectMapper().writeValueAsString(bean);
 
-        assertEquals("{\"name\":\"My Bean\",\"KeyB\":\"ValueB\",\"KeyA\":\"ValueA\"}", result);
+        assertEquals("{\"id\":1,\"name\":\"My Bean\",\"KeyB\":\"ValueB\",\"KeyA\":\"ValueA\"}", result);
     }
 }
