@@ -17,6 +17,6 @@ class ExtendableBeanSerializationTest {
 
         String result = new ObjectMapper().writeValueAsString(bean);
 
-        assertEquals("{\"KeyB\":\"ValueB\",\"KeyA\":\"ValueA\"}", result);
+        assertEquals("{\"name\":\"My Bean\",\"KeyB\":\"ValueB\",\"KeyA\":\"ValueA\"}", result);
     }
 }

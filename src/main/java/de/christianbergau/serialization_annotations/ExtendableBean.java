@@ -1,6 +1,7 @@
 package de.christianbergau.serialization_annotations;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonGetter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,5 +21,10 @@ public class ExtendableBean {
 
     public void name(String name) {
         this.name = name;
+    }
+
+    @JsonGetter("name")
+    public String name() {
+        return name;
     }
 }
